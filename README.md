@@ -1,4 +1,4 @@
-#Stock Price and News Notifier
+# Stock Price and News Notifier
 This script retrieves the daily stock price data for a given stock symbol (TSLA - Tesla Inc) from Alpha Vantage API and checks if there was a significant percentage change in the stock price compared to the previous day's closing price. If the percentage change is less than 5%, it fetches the latest news articles related to the company (Tesla Inc) from NewsAPI and sends them, along with the percentage change, to a specified phone number using the SendMessage class.
 
 ## Prerequisites
