@@ -3,7 +3,7 @@ This script retrieves the daily stock price data for a given stock symbol (TSLA 
 
 ## Prerequisites
 Python 3.x
-Required Python packages: `requests`
+Required Python packages: `requests`, `os`, `datetime`
 
 ## Setup
 Sign up for a free account and obtain API keys from the following services:
