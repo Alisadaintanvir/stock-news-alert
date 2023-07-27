@@ -3,7 +3,7 @@ This script retrieves the daily stock price data for a given stock symbol (TSLA 
 
 ## Prerequisites
 Python 3.x
-Required Python packages: `requests`, `os`, `datetime`
+Required Python packages: `requests`, `os`
 
 ## Setup
 Sign up for a free account and obtain API keys from the following services:
@@ -31,7 +31,6 @@ If the percentage difference is less than 5%, it fetches the top 3 news articles
 Sends a message to your phone number containing the percentage change and each article's title and description.
 Please ensure that the message module (defined in message.py) is set up correctly to send messages to your phone number.
 
-#### Note: The script uses the "datetime" module to fetch the stock prices for yesterday and the day before yesterday.
 
 Disclaimer: The script's purpose is to provide a basic demonstration of fetching stock prices and news articles. It may require additional error handling, logging, and security measures for production use.
 
