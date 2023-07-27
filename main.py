@@ -2,9 +2,11 @@ import os
 import requests
 from datetime import datetime, timedelta
 from message import SendMessage
+from dotenv import load_dotenv
+load_dotenv()
+
 ALPHAVANTAGE_API = os.environ.get("ALPHAVANTAGE_API")
-NEWSAPI_API = ["NEWSAPI_API"]
-print(NEWSAPI_API)
+NEWSAPI_API = os.environ.get("NEWSAPI_API")
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
@@ -39,11 +41,10 @@ if difference_percentage < 5:
     news_api_params = {
         "q": COMPANY_NAME,
         "apikey": NEWSAPI_API,
-        "pageSize": 3
+        "pageSize": 1
     }
     news_api_response = requests.get(news_api_url, news_api_params)
     news_api_response.raise_for_status()
     articles = news_api_response.json()["articles"]
-
-# Send a separate message with the percentage change and each article's title and description to your phone number.
+    # Send a separate message with the percentage change and each article's title and description to your phone number.
     message.send(articles, COMPANY_NAME, difference_percentage)

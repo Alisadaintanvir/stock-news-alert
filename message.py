@@ -1,10 +1,11 @@
+import os
 from twilio.rest import Client
 
 
 class SendMessage:
     def __init__(self):
-        self.account_sid = '[sid]'
-        self.auth_token = '[auth_token]'
+        self.account_sid = os.environ.get("account_sid")
+        self.auth_token = os.environ.get("auth_token")
         self.client = Client(self.account_sid, self.auth_token)
 
     def send(self, articles, company_name, percentage):
