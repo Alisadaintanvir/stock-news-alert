@@ -1,8 +1,8 @@
 import os
 import requests
-from datetime import datetime, timedelta
 from message import SendMessage
 from dotenv import load_dotenv
+
 load_dotenv()
 
 ALPHAVANTAGE_API = os.environ.get("ALPHAVANTAGE_API")
@@ -11,11 +11,6 @@ STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
 message = SendMessage()
-
-# Getting yesterday date and day before yesterday date
-now = datetime.now()
-yesterday = (datetime.today() - timedelta(days=1)).date()
-day_before_yesterday = (datetime.today() - timedelta(days=2)).date()
 
 alphavantage_params = {
     "function": "TIME_SERIES_DAILY",
